@@ -30,6 +30,7 @@ body {
     font-size: 45px;
     padding-right: 10px;
     color: white;
+    user-select: none;
 }
 
 .calc__btns {
@@ -37,6 +38,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3px;
+    user-select: none;
 }
 
 .calc__btn {
@@ -57,4 +59,24 @@ body {
 
 .btn--equal {
     background-color: #495469;
+}
+
+.calc__btn:hover {
+    background-color: #2d3631;
+}
+
+.btn--fct:hover {
+    background-color: #363f37;
+}
+
+.btn--equal:hover {
+    background-color: #3d4759;
+}
+
+.calc__btn:active {
+    background-color: #272f2b;
+}
+
+.btn--equal:active {
+    background-color: #29303c;
 }
