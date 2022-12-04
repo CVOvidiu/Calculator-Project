@@ -1,27 +1,30 @@
 <mxfile host="65bd71144e">
     <diagram id="CXw4BF-POYOjq-wwur1x" name="Page-1">
-        <mxGraphModel dx="2080" dy="882" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1000" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="54" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="53" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="78" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="45" target="77">
+                <mxCell id="78" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="77" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="92" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="45" target="91">
+                <mxCell id="92" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="91" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="45" target="99">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="START" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-                    <mxGeometry x="740" y="495" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="720" y="635" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="69" value="" style="edgeStyle=none;html=1;" parent="1" source="53" target="68" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="71" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="53" target="72" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1160" y="375" as="targetPoint"/>
+                        <mxPoint x="1140" y="515" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
@@ -33,56 +36,89 @@
                 <mxCell id="76" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="53" target="75" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="96" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="53" target="95">
+                <mxCell id="96" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="53" target="95" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="53" value="Click number button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="940" y="485" width="120" height="80" as="geometry"/>
+                    <mxGeometry x="1090" y="625" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="When 'output' is '0'&lt;br&gt;Change 'output' with btn content" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="450" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1290" y="590" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="When 'output' != '0'&lt;br&gt;Concatenate 'output' with btn content" style="whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="350" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1290" y="490" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="When length of 'output' &amp;gt; 10&lt;br&gt;Modify 'output' font size" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="550" width="120" height="80" as="geometry"/>
+                    <mxGeometry x="1290" y="690" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="75" value="When 'output' length is 15&lt;br&gt;Stop concatenating" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="670" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1290" y="810" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="80" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="77" target="79">
+                <mxCell id="80" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="77" target="79" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="82" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="77" target="81">
+                <mxCell id="82" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="77" target="81" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="87" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="77" target="86">
+                <mxCell id="87" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="77" target="86" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="77" value="Click delete button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="940" y="880" width="120" height="80" as="geometry"/>
+                <mxCell id="77" value="Click delete button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="1020" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="79" value="If 'output' is one digit&lt;br&gt;Change to '0'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="1140" y="790" width="120" height="60" as="geometry"/>
+                <mxCell id="79" value="If 'output' is one digit&lt;br&gt;Change to '0'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="930" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="81" value="If 'output' is &amp;gt; 1&lt;br&gt;Remove the last digit" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="1140" y="890" width="120" height="60" as="geometry"/>
+                <mxCell id="81" value="If 'output' is &amp;gt; 1&lt;br&gt;Remove the last digit" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="1030" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="86" value="When length of 'output' &amp;gt; 10&lt;br&gt;Modify 'output' font size" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="1140" y="990" width="120" height="80" as="geometry"/>
+                <mxCell id="86" value="When length of 'output' &amp;gt; 10&lt;br&gt;Modify 'output' font size" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="1130" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="94" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="91" target="93">
+                <mxCell id="94" value="" style="edgeStyle=none;html=1;" parent="1" source="91" target="93" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="91" value="Click dot button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="940" y="100" width="120" height="80" as="geometry"/>
+                <mxCell id="91" value="Click dot button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="220" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="93" value="Add dot at the end of 'output'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="1140" y="110" width="120" height="60" as="geometry"/>
+                <mxCell id="93" value="Add dot at the end of 'output'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="230" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="95" value="When dot button was pressed&lt;br&gt;Add the rest of digits at the end without comma" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="1140" y="230" width="120" height="85" as="geometry"/>
+                <mxCell id="95" value="When dot button was pressed&lt;br&gt;Add the rest of digits at the end without comma" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1290" y="370" width="120" height="85" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="101">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="105">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="109">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="111">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="Click plus button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="220" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="If is no 'history'&lt;br&gt;- Change 'history' to 'output +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="65" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="If is 'history'&lt;br&gt;- Change 'history' to 'history' + 'output' and ' +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="60" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="If 'history' length is bigger than 15:&lt;br&gt;- Reset history&lt;br&gt;- 'output' is 'Error'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="65" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;If 'output' is 'Error':&lt;br&gt;- Reset 'output' to '0'&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="70" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="Reset font-size of output element" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="70" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

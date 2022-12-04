@@ -6,7 +6,7 @@ const calcBtns = document.querySelector(".calc__btns");
 
 class App {
   #output = "0";
-  #reminder = 0;
+  #history = 0;
 
   constructor() {
     calcBtns.addEventListener("click", this.#state.bind(this));
@@ -29,13 +29,14 @@ class App {
     // Dot button
     if (e.target.innerHTML === ".") this.#output = this.#dotBtnHandler();
 
-    // // Plus button
-    // if (e.target.innerHTML === "+") this.#plusBtnHandler();
+    // Plus button
+    if (e.target.innerHTML === "+") this.#output = this.#plusBtnHandler();
 
     // // Equal button
     // if (e.target.innerHTML === "=") this.#output = this.#equalBtnHandler();
 
-    outputElem.innerHTML = this.#formatComma(this.#output);
+    if (this.#output === "Error") outputElem.innerHTML = this.#output;
+    else outputElem.innerHTML = this.#formatComma(this.#output);
     console.log(e.target, pressed, this.#output); //! Debugging purposes
   }
 
@@ -70,19 +71,36 @@ class App {
 
   #dotBtnHandler() {
     let output = this.#output;
+    // Normal behavior
     if (!output.includes(".")) output += ".";
 
     return output;
   }
 
-  // #plusBtnHandler() {
-  //   let output = this.#output;
-  //   this.#reminder = Number(output);
-  //   output += " +";
-  //   historyElem.innerHTML = output;
-  //   output = "0";
-  //   this.output = output;
-  // }
+  #plusBtnHandler() {
+    let output = this.#output;
+    // If 'output' is 'Error'
+    if (output === "Error") return (output = "0");
+
+    // Normal behavior
+    if (!this.#history) this.#history = Number(output);
+    else this.#history += Number(output);
+
+    if (this.#history.toString().length > 15) {
+      // No support for scientific notation
+      this.#history = 0;
+      historyElem.innerHTML = "";
+      output = "Error";
+    } else {
+      // Normal behavior
+      historyElem.innerHTML = this.#history.toString() + " +";
+      output = "0";
+    }
+    // Reset 'output' font-size
+    outputElem.style.fontSize = "50px";
+
+    return output;
+  }
 
   // #equalBtnHandler() {
   //   historyElem.innerHTML += ` ${output}`;
