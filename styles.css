@@ -1,82 +1,82 @@
 body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lightgrey;
-    font-family: "Roboto";
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+  font-family: "Roboto";
 }
 
 .calc {
-    padding: 25px 5px 5px 5px;
-    background-color: #1a231f;
-    border-radius: 10px;
+  padding: 25px 5px 5px 5px;
+  background-color: #1a231f;
+  border-radius: 10px;
+  width: 22rem;
 }
 
 .calc__history {
-    height: 25px;
-    color: rgb(118, 118, 118);
-    text-align: end;
-    line-height: 30px;
-    padding-right: 10px;
+  height: 25px;
+  color: rgb(118, 118, 118);
+  text-align: end;
+  line-height: 30px;
+  padding-right: 10px;
 }
 
 .calc__output {
-    height: 50px;
-    background-color: #1a231f;
-    text-align: end;
-    line-height: 50px;
-    font-size: 45px;
-    padding-right: 10px;
-    color: white;
-    user-select: none;
+  height: 50px;
+  background-color: #1a231f;
+  text-align: end;
+  line-height: 50px;
+  font-size: 50px;
+  padding-right: 10px;
+  color: white;
+  user-select: none;
 }
 
 .calc__btns {
-    padding-top: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 3px;
-    user-select: none;
+  padding-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.2rem;
+  user-select: none;
 }
 
 .calc__btn {
-    width: 70px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 18px;
-    background-color: #363f37;
-    color: white;
-    border-radius: 5px;
-    padding: 0;
-    border: 0;
+  text-align: center;
+  line-height: 5rem;
+  font-size: 20px;
+  background-color: #363f37;
+  color: white;
+  border-radius: 5px;
+  padding: 0;
+  border: 0;
 }
 
 .btn--fct {
-    background-color: #2d3631;
+  background-color: #2d3631;
 }
 
 .btn--equal {
-    background-color: #495469;
+  background-color: #495469;
 }
 
 .calc__btn:hover {
-    background-color: #2d3631;
+  background-color: #2d3631;
 }
 
 .btn--fct:hover {
-    background-color: #363f37;
+  background-color: #363f37;
 }
 
 .btn--equal:hover {
-    background-color: #3d4759;
+  background-color: #3d4759;
 }
 
 .calc__btn:active {
-    background-color: #272f2b;
+  background-color: #272f2b;
 }
 
 .btn--equal:active {
-    background-color: #29303c;
+  background-color: #29303c;
 }
