@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="CXw4BF-POYOjq-wwur1x" name="Page-1">
-        <mxGraphModel dx="1000" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1067" dy="1757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,7 +13,10 @@
                 <mxCell id="92" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="91" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="45" target="99">
+                <mxCell id="100" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="99" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="113" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="START" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
@@ -87,38 +90,65 @@
                 <mxCell id="95" value="When dot button was pressed&lt;br&gt;Add the rest of digits at the end without comma" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="1290" y="370" width="120" height="85" as="geometry"/>
                 </mxCell>
-                <mxCell id="102" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="101">
+                <mxCell id="102" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="101" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="105">
+                <mxCell id="106" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="105" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="107">
+                <mxCell id="108" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="107" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="109">
+                <mxCell id="110" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="109" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="112" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="111">
+                <mxCell id="112" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="111" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="99" value="Click plus button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="720" y="220" width="120" height="80" as="geometry"/>
+                <mxCell id="119" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="118" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="101" value="If is no 'history'&lt;br&gt;- Change 'history' to 'output +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="720" y="65" width="120" height="70" as="geometry"/>
+                <mxCell id="99" value="Click plus button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="60" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="105" value="If is 'history'&lt;br&gt;- Change 'history' to 'history' + 'output' and ' +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="560" y="60" width="120" height="80" as="geometry"/>
+                <mxCell id="101" value="If is no history&lt;br&gt;- Change history to 'output +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="-95" width="120" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="107" value="If 'history' length is bigger than 15:&lt;br&gt;- Reset history&lt;br&gt;- 'output' is 'Error'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="880" y="65" width="120" height="70" as="geometry"/>
+                <mxCell id="105" value="If is history&lt;br&gt;- Change history to 'term' + 'output' and ' +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="-100" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="109" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;If 'output' is 'Error':&lt;br&gt;- Reset 'output' to '0'&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="400" y="70" width="120" height="60" as="geometry"/>
+                <mxCell id="107" value="If 'term' in history length is bigger than 15:&lt;br&gt;- Reset history&lt;br&gt;- 'output' is 'Error'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="-110" width="120" height="85" as="geometry"/>
                 </mxCell>
-                <mxCell id="111" value="Reset font-size of output element" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="1040" y="70" width="120" height="60" as="geometry"/>
+                <mxCell id="109" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;If 'output' is 'Error':&lt;br&gt;- Reset 'output' to '0'&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="-90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="Reset font-size of output element" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="1040" y="-90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="" style="edgeStyle=none;html=1;" parent="1" source="113" target="115" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="113" target="120">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="113" target="122">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="Click equal button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="220" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" value="If is no 'term'&lt;br&gt;Set history to 'output =' and change 'output' to '0'&amp;nbsp;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="225" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="If equal button was pressed previously&lt;br&gt;Change the 'equal' sign in 'plus' sign in history" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="-100" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="If second there is no second term&lt;br&gt;- Second term becomes 'output'&amp;nbsp;&lt;br&gt;- Add second term to history&lt;br&gt;- output becomes the expression result" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="30" width="150" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="If second term is defined:&lt;br&gt;- First term becomes the result&lt;br&gt;- Expression is reevaluated" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="110" width="130" height="100" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

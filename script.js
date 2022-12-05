@@ -6,7 +6,9 @@ const calcBtns = document.querySelector(".calc__btns");
 
 class App {
   #output = "0";
-  #history = 0;
+  #term = undefined;
+  #term2 = undefined;
+  #operator;
 
   constructor() {
     calcBtns.addEventListener("click", this.#state.bind(this));
@@ -32,8 +34,8 @@ class App {
     // Plus button
     if (e.target.innerHTML === "+") this.#output = this.#plusBtnHandler();
 
-    // // Equal button
-    // if (e.target.innerHTML === "=") this.#output = this.#equalBtnHandler();
+    // Equal button
+    if (e.target.innerHTML === "=") this.#output = this.#equalBtnHandler();
 
     if (this.#output === "Error") outputElem.innerHTML = this.#output;
     else outputElem.innerHTML = this.#formatComma(this.#output);
@@ -83,30 +85,57 @@ class App {
     if (output === "Error") return (output = "0");
 
     // Normal behavior
-    if (!this.#history) this.#history = Number(output);
-    else this.#history += Number(output);
+    if (!this.#term) this.#term = Number(output);
+    else {
+      // If equal button was pressed previously
+      if (historyElem.innerHTML.slice(-1) === "=") {
+        historyElem.innerHTML = historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 1) + "+"; //prettier-ignore
+        return "0";
+      }
+      this.#term += Number(output);
+    }
 
-    if (this.#history.toString().length > 15) {
+    if (String(this.#term).length > 15) {
       // No support for scientific notation
-      this.#history = 0;
+      this.#term = 0;
       historyElem.innerHTML = "";
       output = "Error";
     } else {
       // Normal behavior
-      historyElem.innerHTML = this.#history.toString() + " +";
+      historyElem.innerHTML = String(this.#term) + " +";
       output = "0";
     }
     // Reset 'output' font-size
     outputElem.style.fontSize = "50px";
 
+    this.#operator = "+";
     return output;
   }
 
-  // #equalBtnHandler() {
-  //   historyElem.innerHTML += ` ${output}`;
-  //   output = String(eval(historyElem.innerHTML));
-  //   outputElem.innerHTML = commaFormat(String(eval(historyElem.innerHTML)));
-  // }
+  #equalBtnHandler() {
+    let output = this.#output;
+
+    // No term
+    if (this.#term === undefined) {
+      this.#term = Number(output);
+      historyElem.innerHTML = `${output} =`;
+      output = "0";
+    } else {
+      // No second term
+      if (this.#term2 === undefined) {
+        this.#term2 = Number(output);
+        historyElem.innerHTML += ` ${output} =`;
+        output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+      } else {
+        // Both defined
+        this.#term = Number(output);
+        historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2} = `; //prettier-ignore
+        output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+      }
+    }
+
+    return output;
+  }
 
   #formatComma(num) {
     // Split the number into integer part and decimal part
