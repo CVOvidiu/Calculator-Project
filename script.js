@@ -81,6 +81,7 @@ class App {
 
   #plusBtnHandler() {
     let output = this.#output;
+    this.#operator = "+";
     // If 'output' is 'Error'
     if (output === "Error") return (output = "0");
 
@@ -108,29 +109,35 @@ class App {
     // Reset 'output' font-size
     outputElem.style.fontSize = "50px";
 
-    this.#operator = "+";
     return output;
   }
 
   #equalBtnHandler() {
     let output = this.#output;
 
-    // No term
+    //* No history
     if (this.#term === undefined) {
       this.#term = Number(output);
-      historyElem.innerHTML = `${output} =`;
-      output = "0";
+      historyElem.innerHTML = `${this.#term} =`;
     } else {
-      // No second term
-      if (this.#term2 === undefined) {
-        this.#term2 = Number(output);
-        historyElem.innerHTML += ` ${output} =`;
-        output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
-      } else {
-        // Both defined
+      //* First term defined
+      if (this.#operator === undefined) {
+        //* Operator undefined (=)
         this.#term = Number(output);
-        historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2} = `; //prettier-ignore
-        output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+        historyElem.innerHTML = `${this.#term} =`;
+      } else {
+        //* Operator defined
+        if (this.#term2 === undefined) {
+          //* Second term undefined
+          this.#term2 = Number(output);
+          historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2} =`; //prettier-ignore
+          output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+        } else {
+          //* Second term defined
+          this.#term = Number(output);
+          historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2} =`; //prettier-ignore
+          output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+        }
       }
     }
 
