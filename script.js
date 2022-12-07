@@ -6,8 +6,8 @@ const calcBtns = document.querySelector(".calc__btns");
 
 class App {
   #output = "0";
-  #term = undefined;
-  #term2 = undefined;
+  #term;
+  #term2;
   #operator;
 
   constructor() {
@@ -18,7 +18,11 @@ class App {
     // Event delegation
     if (e.target.classList.contains("calc__btns")) return;
 
-    if (this.#output === "Error") return (output = "0");
+    if (this.#output === "Error") {
+      this.#output = "0";
+      outputElem.innerHTML = this.#output;
+      return;
+    }
 
     // Button pressed
     const pressed = e.target.innerHTML;
@@ -100,12 +104,11 @@ class App {
       }
     }
 
+    this.#operator = "+";
+
     //* Before outputting the result, we check if term value is past limit
     if (String(this.#term).length > 15) {
-      //* No support for scientific notation
-      this.#term = undefined;
-      historyElem.innerHTML = "";
-      output = "Error";
+      output = this.#error();
     } else {
       //* Not error
       historyElem.innerHTML = String(this.#term) + " +";
@@ -115,13 +118,10 @@ class App {
     //* Reset 'output' font-size
     outputElem.style.fontSize = "50px";
 
-    this.#operator = "+";
-
     return output;
   }
 
   #equalBtnHandler() {
-    //TODO: No support for scientific notation
     let output = this.#output;
 
     //* No history
@@ -152,6 +152,16 @@ class App {
       }
     }
 
+    //* No support for scientific notation
+    if (output.length > 15) {
+      output = this.#error();
+    }
+
+    //* Font transformation
+    if (output.length > 10)
+      outputElem.style.fontSize = `${50 + 3.5 * (10 - output.length)}px`;
+    else outputElem.style.fontSize = `50px`;
+
     return output;
   }
 
@@ -175,6 +185,14 @@ class App {
     if (decNumber === "") return `${format}.`; // If dot button was pressed
     else if (decNumber === undefined) return format;
     else return `${format}.${decNumber}`;
+  }
+
+  #error() {
+    this.#term = undefined;
+    this.#term2 = undefined;
+    this.#operator = undefined;
+    historyElem.innerHTML = "";
+    return "Error";
   }
 }
 
