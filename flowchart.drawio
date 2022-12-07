@@ -19,6 +19,9 @@
                 <mxCell id="114" value="" style="edgeStyle=none;html=1;" parent="1" source="45" target="113" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="129" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="45" target="109" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="45" value="START" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="720" y="635" width="120" height="60" as="geometry"/>
                 </mxCell>
@@ -96,35 +99,37 @@
                 <mxCell id="106" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="105" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="107" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="110" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="109" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="112" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="111" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="119" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="118" edge="1">
+                <mxCell id="131" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="130">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="Click plus button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="720" y="60" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="101" value="If is no history&lt;br&gt;- Change history to 'output +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="720" y="-95" width="120" height="70" as="geometry"/>
+                <mxCell id="132" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="101" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="105" value="If is history&lt;br&gt;- Change history to 'term' + 'output' and ' +'.&lt;br&gt;- Reset 'output' to '0'." style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="-100" width="120" height="80" as="geometry"/>
+                <mxCell id="101" value="I: If no first term:&lt;br&gt;&lt;br&gt;- Set first term to 'output'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="-71.25" width="140" height="52.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="107" value="If 'term' in history length is bigger than 15:&lt;br&gt;- Reset history&lt;br&gt;- 'output' is 'Error'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="880" y="-110" width="120" height="85" as="geometry"/>
+                <mxCell id="133" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="105" target="107">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="770" y="-145" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="105" value="I: First term defined but second term is undefined:&lt;br&gt;&lt;br&gt;- Set first term to previous value of 'firstTerm' + 'output'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="-85" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="107" target="137">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="I: If first term's length is bigger than 15:&lt;br&gt;&lt;br&gt;- Set first term to undefined&lt;br&gt;- Reset history&lt;br&gt;- 'output' is 'Error'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="-255" width="140" height="115" as="geometry"/>
                 </mxCell>
                 <mxCell id="109" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;If 'output' is 'Error':&lt;br&gt;- Reset 'output' to '0'&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="400" y="-90" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="530" y="635" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="111" value="Reset font-size of output element" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="1040" y="-90" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="710" y="-455" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="116" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="113" target="115" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -132,29 +137,38 @@
                 <mxCell id="121" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="113" target="120" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="125" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="113" target="124">
+                <mxCell id="125" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="113" target="124" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="128" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="113" target="127">
+                <mxCell id="128" value="" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="113" target="127" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="113" value="Click equal button" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="520" y="220" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="115" value="I: No history:&lt;br&gt;&lt;br&gt;- Set first term to output&lt;br&gt;- Set history to 'firstTerm ='" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="160" width="150" height="70" as="geometry"/>
+                <mxCell id="115" value="I: No history:&lt;br&gt;&lt;br&gt;- Set first term to output&lt;br&gt;- Set history to 'firstTerm ='&lt;br&gt;- Set 'output' to '0'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="150" width="150" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="118" value="If equal button was pressed previously&lt;br&gt;Change the 'equal' sign in 'plus' sign in history" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="240" y="-100" width="120" height="80" as="geometry"/>
+                <mxCell id="120" value="I: First term defined but no operator:&lt;br&gt;&lt;br&gt;- Set first term to output&lt;br&gt;- Set history to 'firstTerm ='&lt;br&gt;- Set 'output' to '0'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="250" width="150" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="120" value="I: First term defined but no operator:&lt;br&gt;&lt;br&gt;- Set first term to output&lt;br&gt;- Set history to 'firstTerm ='" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="255" width="150" height="85" as="geometry"/>
-                </mxCell>
-                <mxCell id="124" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;I: First term defined, operator exists but second term is undefined:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- Set second term to output&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- Set history to 'firstTerm operator secondTerm ='&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- Set output to the evaluated result of history&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+                <mxCell id="124" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;I: First term defined, operator exists but second term is undefined:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- Set second term to output&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- Set history to 'firstTerm operator secondTerm ='&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- Set output to the evaluated result of history&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="270" y="365" width="190" height="138.75" as="geometry"/>
                 </mxCell>
-                <mxCell id="127" value="I: First term defined, operator exists and second term defined:&lt;br&gt;&lt;br&gt;- Set first term to output&lt;br&gt;- Set history to 'firstTerm operator secondTerm ='&lt;br&gt;- Set output to the evaluated result of history" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                <mxCell id="127" value="I: First term defined, operator exists and second term defined:&lt;br&gt;&lt;br&gt;- Set first term to output&lt;br&gt;- Set history to 'firstTerm operator secondTerm ='&lt;br&gt;- Set output to the evaluated result of history" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" parent="1" vertex="1">
                     <mxGeometry x="275" y="525" width="180" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="130" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="I: First term and second term defined:&lt;br&gt;&lt;br&gt;- Set second term to undefined&lt;br&gt;- Set first term to output" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="-90" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="137" target="111">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="I: If not:&lt;br&gt;&lt;br&gt;- Set history to 'firstTerm +'&lt;br&gt;- Reset 'output' to '0'" style="whiteSpace=wrap;html=1;fontFamily=Tahoma;align=left;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="695" y="-365" width="150" height="72.5" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

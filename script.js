@@ -18,6 +18,8 @@ class App {
     // Event delegation
     if (e.target.classList.contains("calc__btns")) return;
 
+    if (this.#output === "Error") return (output = "0");
+
     // Button pressed
     const pressed = e.target.innerHTML;
 
@@ -43,6 +45,7 @@ class App {
   }
 
   #numBtnHandler(pressed) {
+    //TODO: When history has '=' reset history
     let output = this.#output;
     // Stop at 15 digits
     if (output.length === 15) return output;
@@ -81,50 +84,58 @@ class App {
 
   #plusBtnHandler() {
     let output = this.#output;
-    this.#operator = "+";
-    // If 'output' is 'Error'
-    if (output === "Error") return (output = "0");
 
-    // Normal behavior
-    if (!this.#term) this.#term = Number(output);
-    else {
-      // If equal button was pressed previously
-      if (historyElem.innerHTML.slice(-1) === "=") {
-        historyElem.innerHTML = historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 1) + "+"; //prettier-ignore
-        return "0";
+    //* No first term
+    if (this.#term === undefined) {
+      this.#term = Number(output);
+    } else {
+      //* First term is defined
+      if (this.#term2 === undefined) {
+        //* Second term is not defined
+        this.#term += Number(output);
+      } else {
+        //* Second term is defined
+        this.#term2 = undefined;
+        this.#term = Number(output);
       }
-      this.#term += Number(output);
     }
 
+    //* Before outputting the result, we check if term value is past limit
     if (String(this.#term).length > 15) {
-      // No support for scientific notation
-      this.#term = 0;
+      //* No support for scientific notation
+      this.#term = undefined;
       historyElem.innerHTML = "";
       output = "Error";
     } else {
-      // Normal behavior
+      //* Not error
       historyElem.innerHTML = String(this.#term) + " +";
       output = "0";
     }
-    // Reset 'output' font-size
+
+    //* Reset 'output' font-size
     outputElem.style.fontSize = "50px";
+
+    this.#operator = "+";
 
     return output;
   }
 
   #equalBtnHandler() {
+    //TODO: No support for scientific notation
     let output = this.#output;
 
     //* No history
     if (this.#term === undefined) {
       this.#term = Number(output);
       historyElem.innerHTML = `${this.#term} =`;
+      output = "0";
     } else {
       //* First term defined
       if (this.#operator === undefined) {
         //* Operator undefined (=)
         this.#term = Number(output);
         historyElem.innerHTML = `${this.#term} =`;
+        output = "0";
       } else {
         //* Operator defined
         if (this.#term2 === undefined) {
