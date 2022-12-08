@@ -49,8 +49,11 @@ class App {
   }
 
   #numBtnHandler(pressed) {
-    //TODO: When history has '=' reset history
+    //* When history has '=' reset everything
+    if (historyElem.innerHTML.slice(-1) === "=") this.#reset();
+
     let output = this.#output;
+
     // Stop at 15 digits
     if (output.length === 15) return output;
 
@@ -66,6 +69,9 @@ class App {
   }
 
   #delBtnHandler() {
+    //* When history has '=' reset everything
+    if (historyElem.innerHTML.slice(-1) === "=") this.#reset();
+
     let output = this.#output;
     // Normal behavior
     if (output.length === 1) output = "0";
@@ -193,6 +199,15 @@ class App {
     this.#operator = undefined;
     historyElem.innerHTML = "";
     return "Error";
+  }
+
+  #reset() {
+    this.#term = undefined;
+    this.#term2 = undefined;
+    this.#operator = undefined;
+    this.#output = "0";
+    historyElem.innerHTML = "";
+    outputElem.innerHTML = "0";
   }
 }
 
