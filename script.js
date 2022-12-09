@@ -44,8 +44,17 @@ class App {
     if (e.target.innerHTML === "=") this.#output = this.#equalBtnHandler();
 
     if (this.#output === "Error") outputElem.innerHTML = this.#output;
-    else outputElem.innerHTML = this.#formatComma(this.#output);
-    console.log(e.target, pressed, this.#output); //! Debugging purposes
+    else {
+      outputElem.innerHTML = this.#formatComma(this.#output);
+    }
+    console.log(
+      e.target,
+      pressed,
+      this.#output,
+      this.#term,
+      this.#term2,
+      this.#operator
+    ); //! Debugging purposes
   }
 
   #numBtnHandler(pressed) {
@@ -102,7 +111,7 @@ class App {
       //* First term is defined
       if (this.#term2 === undefined) {
         //* Second term is not defined
-        this.#term += Number(output);
+        this.#term = this.#floatify(this.#term + Number(output));
       } else {
         //* Second term is defined
         this.#term2 = undefined;
@@ -134,26 +143,24 @@ class App {
     if (this.#term === undefined) {
       this.#term = Number(output);
       historyElem.innerHTML = `${this.#term} =`;
-      output = "0";
     } else {
       //* First term defined
       if (this.#operator === undefined) {
         //* Operator undefined (=)
         this.#term = Number(output);
         historyElem.innerHTML = `${this.#term} =`;
-        output = "0";
       } else {
         //* Operator defined
         if (this.#term2 === undefined) {
           //* Second term undefined
           this.#term2 = Number(output);
           historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2} =`; //prettier-ignore
-          output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+          output = String(this.#floatify(eval(`${this.#term} ${this.#operator} ${this.#term2}`))); //prettier-ignore
         } else {
           //* Second term defined
           this.#term = Number(output);
           historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2} =`; //prettier-ignore
-          output = String(eval(historyElem.innerHTML.slice(0, historyElem.innerHTML.length - 2))); //prettier-ignore
+          output = String(this.#floatify(eval(`${this.#term} ${this.#operator} ${this.#term2}`))); //prettier-ignore
         }
       }
     }
@@ -208,6 +215,10 @@ class App {
     this.#output = "0";
     historyElem.innerHTML = "";
     outputElem.innerHTML = "0";
+  }
+
+  #floatify(number) {
+    return parseFloat(number.toFixed(10));
   }
 }
 
