@@ -18,6 +18,7 @@ class App {
     // Event delegation
     if (e.target.classList.contains("calc__btns")) return;
 
+    // If a button was pressed when Error
     if (this.#output === "Error") {
       this.#output = "0";
       outputElem.innerHTML = this.#output;
@@ -31,22 +32,55 @@ class App {
     if (e.target.classList.contains("btn--num"))
       this.#output = this.#numBtnHandler(pressed);
 
-    // Delete button
-    if (e.target.innerHTML === "del") this.#output = this.#delBtnHandler();
+    switch (e.target.innerHTML) {
+      case "del":
+        this.#output = this.#delBtnHandler();
+        break;
 
-    // Dot button
-    if (e.target.innerHTML === ".") this.#output = this.#dotBtnHandler();
+      case "C":
+        this.#reset();
+        break;
 
-    // Plus button
-    if (e.target.innerHTML === "+") this.#output = this.#plusBtnHandler();
+      case "=":
+        this.#output = this.#equalBtnHandler();
+        break;
 
-    // Equal button
-    if (e.target.innerHTML === "=") this.#output = this.#equalBtnHandler();
+      case ".":
+        this.#output = this.#dotBtnHandler();
+        break;
 
-    if (this.#output === "Error") outputElem.innerHTML = this.#output;
-    else {
-      outputElem.innerHTML = this.#formatComma(this.#output);
+      case "+":
+        this.#output = this.#operationBtnHandler("+");
+        break;
+
+      case "-":
+        this.#output = this.#operationBtnHandler("-");
+        break;
+
+      case "/":
+        this.#output = this.#operationBtnHandler("/");
+        break;
+
+      case "*":
+        this.#output = this.#operationBtnHandler("*");
+        break;
+
+      case "sqrt":
+        this.#output = this.#sqrtBtnHandler();
+        break;
+
+      case "%":
+        this.#output = this.#percentBtnHandler();
+        break;
+
+      default:
+        break;
     }
+
+    // If operation threw an error or not
+    if (this.#output === "Error") outputElem.innerHTML = this.#output;
+    else outputElem.innerHTML = this.#formatComma(this.#output);
+
     console.log(
       e.target,
       pressed,
@@ -101,7 +135,7 @@ class App {
     return output;
   }
 
-  #plusBtnHandler() {
+  #operationBtnHandler(op) {
     let output = this.#output;
 
     //* No first term
@@ -111,7 +145,8 @@ class App {
       //* First term is defined
       if (this.#term2 === undefined) {
         //* Second term is not defined
-        this.#term = this.#floatify(this.#term + Number(output));
+        if(output !== '0') //* Only change the operator if is '0'
+          this.#term = this.#floatify(eval(`${this.#term} ${op} ${Number(output)}`)); //prettier-ignore
       } else {
         //* Second term is defined
         this.#term2 = undefined;
@@ -119,14 +154,14 @@ class App {
       }
     }
 
-    this.#operator = "+";
+    this.#operator = op;
 
     //* Before outputting the result, we check if term value is past limit
     if (String(this.#term).length > 15) {
       output = this.#error();
     } else {
       //* Not error
-      historyElem.innerHTML = String(this.#term) + " +";
+      historyElem.innerHTML = String(this.#term) + ` ${op}`;
       output = "0";
     }
 
@@ -178,6 +213,22 @@ class App {
     return output;
   }
 
+  #sqrtBtnHandler() {}
+
+  #percentBtnHandler() {
+    let output = this.#output;
+
+    if (this.#operator === undefined) {
+      historyElem.innerHTML = "0";
+      return (output = "0");
+    } else {
+      this.#term2 = this.#floatify(this.#term * (Number(output) / 100));
+      output = String(this.#term2);
+      historyElem.innerHTML = `${this.#term} ${this.#operator} ${this.#term2}`; //prettier-ignore
+      return output;
+    }
+  }
+
   #formatComma(num) {
     // Split the number into integer part and decimal part
     let [intNumber, decNumber] = num.split(".");
@@ -218,7 +269,9 @@ class App {
   }
 
   #floatify(number) {
-    return parseFloat(number.toFixed(10));
+    // Avoid division by 0
+    if (number === Infinity) return this.#error();
+    else return parseFloat(number.toFixed(10));
   }
 }
 
