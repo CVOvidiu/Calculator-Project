@@ -213,7 +213,19 @@ class App {
     return output;
   }
 
-  #sqrtBtnHandler() {}
+  #sqrtBtnHandler() {
+    let output = this.#output;
+
+    if (this.#term2 === undefined) {
+      this.#term = this.#floatify(Math.sqrt(Number(output)));
+      historyElem.innerHTML = `sqrt(${output})`;
+      return (output = String(this.#term));
+    } else {
+      this.#term2 = this.#floatify(Math.sqrt(Number(output)));
+      historyElem.innerHTML = `${this.#term} ${this.#operator} sqrt(${this.#term2})`; //prettier-ignore
+      return (output = String(this.#term2));
+    }
+  }
 
   #percentBtnHandler() {
     let output = this.#output;
